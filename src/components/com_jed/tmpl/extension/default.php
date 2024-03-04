@@ -41,7 +41,7 @@ $canChange  = $user->authorise('core.edit.state', 'com_jed');
 $canDelete  = $user->authorise('core.delete', 'com_jed');
 
 // Import CSS
-$this->document->getWebAssetManager()
+$this->getDocument()->getWebAssetManager()
     ->useStyle('com_jed.jazstyle');
 
 ?>
@@ -73,7 +73,8 @@ $this->document->getWebAssetManager()
                     <?php echo Text::_("JACTION_EDIT") ?>
                 </a>
             <?php endif; ?>
-            <?php if (false) : // TODO Only show to the developer??>
+            <?php if (false) : // TODO Only show to the developer?
+                ?>
             <a class="btn btn-sm btn-outline-warning" role="button"
                href="#">
                 <span class="fa fa-life-ring" aria-hidden="true"></span>
@@ -128,9 +129,6 @@ $this->document->getWebAssetManager()
             </dl>
         </div>
     </div>
-
-    <?php echo HTMLHelper::_('uitab.startTabSet', 'supply_option_tabs') ?>
-    <?php echo HTMLHelper::_('uitab.addTab', 'supply_option_tabs', 'supply_tab_' . $this->item->supply_type, $this->item->supply_type); ?>
     <div class="jed-wrapper jed-extension margin-bottom">
         <div class="jed-extension__image">
             <?php if ($this->item->logo) : ?>
@@ -177,7 +175,7 @@ $this->document->getWebAssetManager()
 
         <div class="jed-grid jed-grid--1-2">
             <div class="jed-grid__item">
-                <h2 class="heading heading--m">Reviews for free version</h2>
+                <h2 class="heading heading--m">Reviews for <?php echo strtolower($this->item->type)?> version</h2>
                 <strong>4.0</strong>
                 <div class="stars">
                     <div class="star"><span aria-hidden="true" class="icon-star"></span></div>
@@ -186,12 +184,11 @@ $this->document->getWebAssetManager()
                     <div class="star"><span aria-hidden="true" class="icon-star"></span></div>
                     <div class="star"><span aria-hidden="true" class="icon-star-empty"></span></div>
                 </div>
-                <a href="#">132 reviews</a>
+                <a href="#"><?php echo count($this->item->reviews[$this->item->type])?> reviews</a>
             </div>
 
         </div>
     </div>
-    <?php echo HTMLHelper::_('uitab.endTab'); ?>
 </article>
 </div>
 
