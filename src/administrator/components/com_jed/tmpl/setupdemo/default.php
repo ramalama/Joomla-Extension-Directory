@@ -384,6 +384,25 @@ HTMLHelper::_('bootstrap.tooltip');
                             . '"menu-meta_description":"",'
                             . '"robots":""}',
                     ];
+                    $menuitems[] = [
+                        'title' => 'My Extensions',
+                        'alias' => 'my-extensions',
+                        'path' => 'my-extensions',
+                        'link' => 'index.php?option=com_jed&view=developerextensions',
+                        'params' => '{"menu-anchor_title":"",'
+                            . '"menu-anchor_css":"",'
+                            . '"menu_icon_css":"",'
+                            . '"menu_image":"",'
+                            . '"menu_image_css":"",'
+                            . '"menu_text":1,'
+                            . '"menu_show":1,'
+                            . '"page_title":"",'
+                            . '"show_page_heading":"",'
+                            . '"page_heading":"",'
+                            . '"pageclass_sfx":"",'
+                            . '"menu-meta_description":"",'
+                            . '"robots":""}'];
+
 
                     foreach ($menuitems as $m) {
                         $mi               = new MenuTable($db);
