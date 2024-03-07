@@ -64,7 +64,7 @@ class HtmlView extends BaseHtmlView
 
         $currentUser = Factory::getApplication()->getIdentity();
 
-        //TODO check if user is a developer.
+        //TODO proper check if user is a developer.
         if(!$currentUser->id)
             throw new Exception("You need to be logged in." );
 
