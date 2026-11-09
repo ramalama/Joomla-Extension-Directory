@@ -2,8 +2,8 @@
 	"name": "joomla-ked",
 	"description": "Joomla Extensions Directory",
 	"devDependencies": {
-		"@babel/cli": "^7.11.6",
-		"@babel/core": "^7.11.6",
+		"@babel/cli": "^8.1.0",
+		"@babel/core": "^7.29.13",
 		"@babel/preset-env": "^7.11.5",
 		"babel-preset-minify": "^0.5.1"
 	},
